@@ -1,2 +1,2 @@
 # animation.github.io
-Animatie Leerdoel
+A happy interactive animation about a emotional banana
