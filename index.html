@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+  <style>
+
+    video {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #video1 { 
+      display: flex;
+      justify-content: center;
+      width: 50%; 
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -350px;
+    }
+
+    #video2 { 
+      display: flex;
+      justify-content: center;
+      width: 50%; 
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -350px;
+    }
+
+    #video3 { 
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -350px;
+    }
+
+    body{
+      background-color: #86CBE4;
+    }
+
+    .fire_button {
+      background: url('RedButton.gif');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      /* put the height and width of your image here */
+      height: 200px;
+      width: 200px;
+      border: none;
+      font-size: 0px;
+      
+    }
+   
+    .lightning_button {
+      background: url('YellowButton.gif');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      /* put the height and width of your image here */
+      height: 200px;
+      width: 200px;
+      border: none;
+      font-size: 0px;  
+    }
+
+    .test_button {
+      background: url('BlueButton.gif');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      /* put the height and width of your image here */
+      height: 200px;
+      width: 200px;
+      border: none;
+      font-size: 0px;
+    }
+ 
+
+    .lightning_button:focus {
+      outline: none;
+    }
+
+    .test_button:focus {
+      outline: none;
+    }
+
+    .fire_button:focus {
+      outline: none;
+    }
+
+    button span {
+      display: none;
+    }
+
+  </style>
+</head>
+<body> 
+
+<div style="text-align:center"> 
+  <button class="fire_button" onclick="playPause()">Fire</button>
+  <button class="lightning_button" onclick="lightning()">Lightning</button>
+  <button class="test_button" onclick="water()">Water</button> 
+  
+  <br><br>
+  <video id="video1" width="420">
+    <source src="banana_fire_sound.mp4" type="video/mp4">
+  </video>
+
+  <video id="video2" width="420">
+    <source src="banana_water_small.mp4" type="video/mp4">
+  </video>  
+
+  <video id="video3" width="420">
+    <source src="banana_lightning_small.mp4" type="video/mp4">
+  </video>
+
+</div> 
+
+
+<script> 
+var myVideo = document.getElementById("video1");
+var myVideo2 = document.getElementById("video2");
+var myVideo3 = document.getElementById("video3"); 
+
+function playPause() { 
+    if (myVideo.paused) 
+        myVideo.play();        
+    else 
+        myVideo.pause();
+
+} 
+
+function water() { 
+    if (myVideo2.paused) 
+        myVideo2.play(); 
+    else 
+        myVideo2.pause(); 
+} 
+
+function lightning() { 
+    if (myVideo3.paused) 
+        myVideo3.play(); 
+    else 
+        myVideo3.pause(); 
+} 
+
+
+function playPause() {
+    myVideo.play();
+    document.getElementById("video1").style.opacity = "1";
+    document.getElementById("video2").style.opacity = "0";
+    document.getElementById("video3").style.opacity = "0";
+}
+
+function water() {
+    myVideo2.play();
+    document.getElementById("video1").style.opacity = "0";
+    document.getElementById("video2").style.opacity = "1";
+    document.getElementById("video3").style.opacity = "0";
+}
+
+function lightning() {
+    myVideo3.play();
+    document.getElementById("video1").style.opacity = "0";
+    document.getElementById("video2").style.opacity = "0";
+    document.getElementById("video3").style.opacity = "1";
+}
+</script> 
+
+</body> 
+</html>
